@@ -1,19 +1,28 @@
+# -*- coding: utf-8 -*-
 # Copyright 2004-2011 Pexego Sistemas Informáticos. (http://pexego.es)
+# Copyright 2014 Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 # Copyright 2016 Antonio Espinosa <antonio.espinosa@tecnativa.com>
-# Copyright 2021 Tecnativa - João Marques
-# Copyright 2014-2023 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 {
-    "name": "Show links between refunds and their originator invoices.",
-    "version": "17.0.1.0.1",
-    "development_status": "Mature",
-    "category": "Accounting & Finance",
-    "website": "https://github.com/OCA/account-invoicing",
-    "author": "Pexego, Tecnativa, Odoo Community Association (OCA)",
-    "installable": True,
+    "name": "Link refund invoice with original",
+    "summary": "Link refund invoice with its original invoice",
+    "version": "9.0.1.0.0",
+    "author": "Pexego, "
+              "Tecnativa, "
+              "Odoo Community Association (OCA)",
+    "website": "https://odoo-community.org/",
+    "contributors": [
+        'Pexego <www.pexego.es>',
+        'Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>',
+        'Antonio Espinosa <antonio.espinosa@tecnativa.com>',
+    ],
+    "category": "Localisation/Accounting",
+    "depends": [
+        'account',
+    ],
+    "data": [
+        'views/account_invoice_view.xml',
+    ],
+    'installable': False,
     "post_init_hook": "post_init_hook",
-    "depends": ["account"],
-    "license": "AGPL-3",
-    "data": ["views/account_invoice_view.xml"],
 }
