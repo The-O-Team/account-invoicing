@@ -26,9 +26,7 @@ class AccountTax(models.Model):
         handle_price_include=True,
         extra_context=None,
     ):
-        """Insert the un-rounded discount value in the resulting tax computation
-        values.
-        """
+        """Insert the un-rounded discount value in the resulting tax computation values."""
         res = super()._convert_to_tax_base_line_dict(
             base_line,
             partner=partner,
@@ -46,10 +44,6 @@ class AccountTax(models.Model):
             handle_price_include=handle_price_include,
             extra_context=extra_context,
         )
-        if (
-            base_line
-            and base_line._name == "account.move.line"
-            and base_line.discount_fixed
-        ):
+        if base_line._name == "account.move.line" and base_line.discount_fixed:
             res["discount"] = base_line._get_discount_from_fixed_discount()
         return res
