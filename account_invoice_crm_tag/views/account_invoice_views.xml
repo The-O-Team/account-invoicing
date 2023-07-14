@@ -11,8 +11,7 @@
                 <field
                     name="crm_tag_ids"
                     widget="many2many_tags"
-                    invisible="move_type not in ['out_invoice','out_refund']"
-                    options="{'color_field': 'color', 'no_create_edit': True}"
+                    attrs="{'invisible': [('move_type', 'not in', ['out_invoice','out_refund'])]}"
                 />
             </xpath>
         </field>
